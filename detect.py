@@ -102,6 +102,11 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print("[main]: Device Type {}".format(device))
 
+    #check for valid image file extension
+    if not args.image.lower().endswith(('.jpg', '.jpeg')):
+        print("[main]: Only accept jpg or jpeg file type, got {}".format(args.image))
+        exit(1)
+
     templates = json.load(open(args.template_file))
     templates = np.round_(np.array(templates), decimals=8)
     num_templates = templates.shape[0]

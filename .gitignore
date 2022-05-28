@@ -5,6 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
+*.pt
+.DS_Store
+.ipynb_checkpoints
+data/
 
 # Distribution / packaging
 .Python
